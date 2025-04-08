@@ -1,20 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:weather_app_setup/views/home_view.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(const WeatherApp());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class WeatherApp extends StatelessWidget {
+  const WeatherApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
-      ),
+      home: HomeView(),
     );
   }
 }
