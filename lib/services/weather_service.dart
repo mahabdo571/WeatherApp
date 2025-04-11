@@ -17,9 +17,13 @@ class WeatherService {
       );
 
       return WeatherModel.fromJson(response.data);
-    } catch (e) {
+    }on DioException catch (e) {
+     final String errorMessage = e.response?.data['error']['message'] ?? 'Unknown error';
+      log('Error fetching weather data: $errorMessage', error: e);
+      throw Exception(errorMessage);
+    }catch(e) {
       log('Error fetching weather data: $e');
-      rethrow;
+      throw Exception('Failed to load weather data');
     }
   }
 }
