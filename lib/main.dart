@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app_setup/cubits/get_weather_cubit/get_weather_cubit.dart';
-import 'package:weather_app_setup/cubits/get_weather_cubit/get_weather_state.dart';
-import 'package:weather_app_setup/views/home_view.dart';
+import 'cubits/get_weather_cubit/get_weather_cubit.dart';
+import 'cubits/get_weather_cubit/get_weather_state.dart';
+import 'views/home_view.dart';
 
 void main() {
   runApp(const WeatherApp());

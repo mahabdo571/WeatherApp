@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:weather_app_setup/cubits/get_weather_cubit/get_weather_cubit.dart';
-import 'package:weather_app_setup/cubits/get_weather_cubit/get_weather_state.dart';
-import 'package:weather_app_setup/views/search_view.dart';
-import 'package:weather_app_setup/widgets/no_weather_body.dart';
-import 'package:weather_app_setup/widgets/weather_info_body.dart';
+import '../cubits/get_weather_cubit/get_weather_cubit.dart';
+import '../cubits/get_weather_cubit/get_weather_state.dart';
+import 'search_view.dart';
+import '../widgets/no_weather_body.dart';
+import '../widgets/weather_info_body.dart';
 
 class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
