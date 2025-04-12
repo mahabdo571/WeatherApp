@@ -4,10 +4,6 @@ class WeatherStaste {}
 
 class WeatherInitialState extends WeatherStaste {}
 
-class WeatherLoadingState extends WeatherStaste {
-  final WeatherModel weatherModel;
-
-  WeatherLoadingState(this.weatherModel);
-}
+class WeatherLoadingState extends WeatherStaste {}
 
 class WWeatherFailureState extends WeatherStaste {}
