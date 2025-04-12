@@ -8,9 +8,14 @@ import 'package:weather_app_setup/views/search_view.dart';
 import 'package:weather_app_setup/widgets/no_weather_body.dart';
 import 'package:weather_app_setup/widgets/weather_info_body.dart';
 
-class HomeView extends StatelessWidget {
+class HomeView extends StatefulWidget {
   const HomeView({Key? key}) : super(key: key);
 
+  @override
+  State<HomeView> createState() => _HomeViewState();
+}
+
+class _HomeViewState extends State<HomeView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
