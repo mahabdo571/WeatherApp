@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:weather_app_setup/cubits/get_weather_cubit/get_weather_cubit.dart';
+import 'package:weather_app_setup/cubits/get_weather_cubit/get_weather_state.dart';
 import 'package:weather_app_setup/views/home_view.dart';
 
 void main() {
@@ -16,24 +17,28 @@ class WeatherApp extends StatelessWidget {
       create: (context) => GetWeatherCubit(),
       child: Builder(
         builder:
-            (context) => MaterialApp(
-              debugShowCheckedModeBanner: false,
-              theme: ThemeData(
-                primarySwatch: getWeatherColorByDay(
-                  BlocProvider.of<GetWeatherCubit>(
-                    context,
-                  ).weatherModel?.weatherCondition,
-                ),
-                appBarTheme: AppBarTheme(
-                  backgroundColor: getWeatherColorByDay(
-                    BlocProvider.of<GetWeatherCubit>(
-                      context,
-                    ).weatherModel?.weatherCondition,
+            (context) => BlocBuilder<GetWeatherCubit, WeatherStaste>(
+              builder: (context, state) {
+                return MaterialApp(
+                  debugShowCheckedModeBanner: false,
+                  theme: ThemeData(
+                    primarySwatch: getWeatherColorByDay(
+                      BlocProvider.of<GetWeatherCubit>(
+                        context,
+                      ).weatherModel?.weatherCondition,
+                    ),
+                    appBarTheme: AppBarTheme(
+                      backgroundColor: getWeatherColorByDay(
+                        BlocProvider.of<GetWeatherCubit>(
+                          context,
+                        ).weatherModel?.weatherCondition,
+                      ),
+                      foregroundColor: Colors.black,
+                    ),
                   ),
-                  foregroundColor: Colors.black,
-                ),
-              ),
-              home: HomeView(),
+                  home: HomeView(),
+                );
+              },
             ),
       ),
     );
